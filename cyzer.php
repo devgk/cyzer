@@ -42,3 +42,9 @@ require_once PLUGIN_PATH.'/functions/security/default-settings.php';
 
 // Developer Tool Kits
 require_once PLUGIN_PATH.'/includes/wp-management/page-creator.php';
+
+// Form Security
+require_once PLUGIN_PATH.'/includes/form/form-security.php';
+
+// Developer Tool Kits
+require_once PLUGIN_PATH.'/libraries/stag-input-validator/stag_input.php';

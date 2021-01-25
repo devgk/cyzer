@@ -56,8 +56,10 @@ function callback($buffer){
 }
 function buffer_start(){ ob_start("callback"); }
 function buffer_end(){ ob_end_flush(); }
-add_action('get_header', 'buffer_start');
-add_action('wp_footer', 'buffer_end');
+function remove_comments(){
+  add_action('get_header', 'buffer_start');
+  add_action('wp_footer', 'buffer_end');
+}
 
 
 /**
