@@ -18,6 +18,9 @@ function we_form_token($form){
    * If token generated time difference in not empty
    * calculate time difference */
   if(!empty($form_token_gen_ts)){
+	// Original Time
+    $generated_time = strtotime($form_token_gen_ts);
+	  
     // Get difference in seconds
     $token_freshness = time() - $generated_time;
   }
