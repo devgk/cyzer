@@ -7,11 +7,18 @@ function we_form_token($form){
   // Token generated time difference in seconds
   $token_freshness = 6;
 
-  // Form Token
-  $form_token = $_SESSION[$form.'_token'];
+  $form_token = null;
+  $form_token_gen_ts =  null;
 
-  // Token Generated Timestamp
-  $form_token_gen_ts = $_SESSION[$form.'_token_gen_ts'];
+  if(isset($_SESSION[$form.'_token']) && isset($_SESSION[$form.'_token_gen_ts'])){
+    // Form Token
+    $form_token = $_SESSION[$form.'_token'];
+
+    // Token Generated Timestamp
+    $form_token_gen_ts = $_SESSION[$form.'_token_gen_ts'];
+  }
+
+  
 
   /** Calculate Token Freshness
    * 
